@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>글 수정</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>글 수정</h1>
+    <form method="POST">
+        <p><input type="text" name="title" value="{{ post.title }}" required></p>
+        <p><textarea name="content" required>{{ post.content }}</textarea></p>
+        <p><button type="submit">수정 완료</button></p>
+    </form>
+    <a href="{{ url_for('post', id=post.id) }}">취소</a>
+</body>
+</html>

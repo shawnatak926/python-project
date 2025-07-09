@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블로그</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>내 블로그</h1>
+    <a href="{{ url_for('create') }}">새 글 작성</a>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{{ url_for('post', id=post.id) }}">{{ post.title }}</a></li>
+        {% else %}
+            <li>글이 없습니다.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

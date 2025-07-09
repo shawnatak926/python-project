@@ -1,0 +1,112 @@
+/* 전체 레이아웃 */
+body {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', Dotum, 돋움, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px 25px;
+    background: #f5f7fa;
+    color: #333;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* 제목 */
+h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 12px;
+    margin-bottom: 35px;
+}
+
+/* 링크 스타일 */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1abc9c;
+}
+
+/* 입력폼 */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* 리스트 */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 14px 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    transition: background-color 0.2s ease;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+ul li:hover {
+    background-color: #eaf6fc;
+}
+
+/* 폼 문단 여백 */
+form p {
+    margin: 0 0 20px;
+}
+
+/* 삭제 버튼 inline 스타일 대신 클래스 */
+.btn-delete {
+    background-color: #e74c3c;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* 수정 링크와 삭제 버튼 감싸는 컨테이너 */
+.post-actions {
+    margin-top: 25px;
+}
+
+.post-actions a, .post-actions form {
+    display: inline-block;
+    margin-right: 15px;
+}

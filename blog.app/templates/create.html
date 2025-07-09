@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>새 글 작성</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>새 글 작성</h1>
+    <form method="POST">
+        <p><input type="text" name="title" placeholder="제목" required></p>
+        <p><textarea name="content" placeholder="내용" required></textarea></p>
+        <p><button type="submit">작성</button></p>
+    </form>
+    <a href="{{ url_for('index') }}">취소</a>
+</body>
+</html>
