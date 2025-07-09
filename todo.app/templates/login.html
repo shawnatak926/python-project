@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>로그인</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <h1>로그인</h1>
+
+  <!-- 메시지 출력 -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash-messages">
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST" action="{{ url_for('login') }}">
+    <input type="text" name="username" placeholder="아이디" required />
+    <input type="password" name="password" placeholder="비밀번호" required />
+    <button type="submit">로그인</button>
+  </form>
+
+  <p>계정이 없나요? <a href="{{ url_for('register') }}">회원가입</a></p>
+</body>
+</html>
