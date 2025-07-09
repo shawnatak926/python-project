@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>할 일 관리 앱</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>📝 할 일 목록</h1>
+
+  <!-- 할 일 추가 폼 -->
+  <form method="POST" action="{{ url_for('add') }}">
+    <input type="text" name="content" placeholder="할 일을 입력하세요" required>
+    <button type="submit">추가</button>
+  </form>
+
+  <!-- 할 일 목록 출력 -->
+  <ul>
+    {% for todo in todos %}
+      <li class="{{ 'done' if todo['done'] else '' }}">
+        {{ todo['content'] }}
+        <!-- 완료 버튼 -->
+        <form action="{{ url_for('done', todo_id=todo['id']) }}" method="POST" style="display:inline;">
+          <button type="submit">완료</button>
+        </form>
+        <!-- 삭제 버튼 -->
+        <form action="{{ url_for('delete', todo_id=todo['id']) }}" method="POST" style="display:inline;">
+          <button type="submit">삭제</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
