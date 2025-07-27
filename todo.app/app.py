@@ -143,4 +143,3 @@ if __name__ == '__main__':
     init_db()
     app.run(debug=True)
 
-#안녕하세요
